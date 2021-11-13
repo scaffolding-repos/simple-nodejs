@@ -1,3 +1,3 @@
-# simple-nodejs
+# {{=var.name}}
 
-This is a scaffolding repo for nodejs.
+{{=var.description}}

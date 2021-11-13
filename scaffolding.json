@@ -1,0 +1,36 @@
+{
+  "variables": {
+    "name": {
+      "type": "string",
+      "title": "Project/Repository Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Project/Repository Description"
+    },
+    "author": {
+      "type": "string",
+      "title": "Author"
+    },
+    "homepage": {
+        "type": "string",
+        "title": "Homepage"
+    },
+    "test": {
+      "type": "boolean",
+      "title": "Add Unit Test"
+    },
+    "license": {
+      "type": "string",
+      "title": "License",
+      "enum": ["Apache-2.0", "ISC"]
+    },
+    "keywords":{
+        "type": "string",
+        "title": "Homepage"
+    }
+  },
+  "rules": {
+      "LICENSE": false
+    }
+}
