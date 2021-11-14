@@ -2,32 +2,40 @@
   "variables": {
     "name": {
       "type": "string",
-      "title": "Project/Repository Name"
+      "title": "Project/Repository Name",
+      "default": "sampleApp"
     },
     "description": {
       "type": "string",
-      "title": "Project/Repository Description"
+      "title": "Project/Repository Description",
+      "default": "sample app"
     },
     "author": {
       "type": "string",
-      "title": "Author"
+      "title": "Author",
+      "default": "authoer"
     },
     "homepage": {
         "type": "string",
-        "title": "Homepage"
+        "title": "Homepage",        
+        "default": "https://github.com"
+
     },
     "test": {
       "type": "boolean",
-      "title": "Add Unit Test"
+      "title": "Add Unit Test",
+      "default": true
     },
     "license": {
       "type": "string",
       "title": "License",
-      "enum": ["Apache-2.0", "ISC"]
+      "enum": ["Apache-2.0", "ISC"],
+      "default": "ISC"
     },
     "keywords":{
         "type": "string",
-        "title": "Homepage"
+        "title": "Homepage",
+        "default": "https://github.com"
     }
   },
   "rules": {
