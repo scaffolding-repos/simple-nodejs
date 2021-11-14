@@ -1,3 +1,3 @@
-# {{=var.name}}
+# {{=params.name}}
 
-{{=var.description}}
+{{=params.description}}
