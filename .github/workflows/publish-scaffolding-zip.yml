@@ -13,10 +13,21 @@ jobs:
   zip:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: TheDoctor0/zip-release@0.6.0
-        with:
-          filename: simple-nodejs-main.zip
+      - name: ZIP Scaffolding
+        run: |
+            git clone https://github.com/scaffolding-repos/simple-node
+            cd simple-node
+            git archive --format=zip origin/main --output=./simple-nodejs-main.zip
+            ls -l
+            
+      - name: Clone ado-scaffolding
+        run: |
+            git clone https://github.com/scaffolding-repos/ado-scaffolding
+            cd ado-scaffolding
+            cp ../simple-node/simple-nodejs-main.zip public/scaffolding 
+            git add -A
+            git commit -m "publish scaffloding by zip"
+            
           
       - name: Checkout 
         uses: actions/checkout@v2
@@ -24,10 +35,7 @@ jobs:
           repository: scaffolding-repos/ado-scaffolding
 
       - name: Copy
-        uses: canastro/copy-action@0.0.2
-        with: 
-          source: simple-nodejs-main.zip
-          target: public/scaffolding/
+        run: cp simple-node/simple-nodejs-main.zip 
           
       - name: push
         uses: github-actions-x/commit@v2.8
