@@ -13,16 +13,22 @@ jobs:
   zip:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 
-        uses: actions/checkout@v2
-        with:
-          repository: scaffolding-repos/ado-scaffolding
-          path: ado-scaffolding
       - uses: actions/checkout@v2
       - uses: TheDoctor0/zip-release@0.6.0
         with:
           filename: simple-nodejs-main.zip
-      - run: copy simple-nodejs-master.zip ado-scaffolding/public/scaffolding/
+          
+      - name: Checkout 
+        uses: actions/checkout@v2
+        with:
+          repository: scaffolding-repos/ado-scaffolding
+
+      - name: Copy
+        uses: canastro/copy-action@0.0.2
+        with: 
+          source: simple-nodejs-master.zip
+          target: public/scaffolding/
+          
       - name: push
         uses: github-actions-x/commit@v2.8
         with:
